@@ -1,1 +1,1 @@
-web: vendor/bin/heroku-php-apache2 public/
+web: wamp64/www/deploy public/
