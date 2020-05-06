@@ -10,7 +10,7 @@
 
 <html>
 	<head>
-		PHP Pacman Maze
+		<title>PHP Pacman Maze</title>
 		<script type="text/javascript" src="animation.js"></script>
 		<link rel="stylesheet" type="text/css" href="maze.css"/> 
 	</head>
