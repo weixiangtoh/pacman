@@ -1,1 +1,0 @@
-web: wamp64/www/deploy public/
