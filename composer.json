@@ -1,5 +1,5 @@
 {
-  "name": "php-deploy",
+  "name": "php/deploy",
   "description": "A description of my project",
   "type": "project",
   "require": {

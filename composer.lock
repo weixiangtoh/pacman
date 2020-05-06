@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "77536f25f8d1412463a9ae9eb59c9c24",
+    "content-hash": "6d3daa96fd617bcb94531cfb185e9e1d",
     "packages": [
         {
             "name": "collectiveaccess/service-wrapper",
