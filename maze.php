@@ -13,13 +13,15 @@
 		<title>Pacman Maze</title>
 		<script type="text/javascript" src="animation.js"></script>
 		<link rel="stylesheet" type="text/css" href="maze.css"/> 
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 	</head>
 
 	<body <?= $animation?>>
 		<div class='form_container'>
-			<form action="maze.php" method="post">
+			<form action="maze.php" method="post" >
 				Height: <?php generate_height_box();?>
 				Width: <?php generate_width_box();?>
+				
 				<?php 
 					# Repopulate include obstacles checkbox 
 					$has_obstacles = "";
@@ -30,8 +32,9 @@
 					}
 				?> 
 				<input type="checkbox" name="has_obstacles" <?= $has_obstacles?>/> Include Obstacles
+				<br/><br/>
 				<input type="submit" name="generate_maze" value="Generate Maze" class='button'/>	
-			
+				<br/><br/>
 				<?php
 					$path = [];
 					if (isset($_POST["find_path"])){ # When Find Path button is clicked
