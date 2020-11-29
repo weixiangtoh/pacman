@@ -22,10 +22,11 @@ async function animation() {
 	console.log("PATH:" + pathstring);
 	var motionbox = document.getElementById("motion");
 	if (pathstring.length==0){
+		motionbox.innerHTML="<span class='text-danger font-weight-bold'>NO FEASIBLE PATH!</span>";
 		return;
 	}
 	if (pathstring =="-1"){
-		motionbox.innerHTML="NO FEASIBLE PATH!";
+		motionbox.innerHTML="<span class='text-danger font-weight-bold'>NO FEASIBLE PATH!</span>";
 		return;
     }
 	
@@ -39,7 +40,7 @@ async function animation() {
 	
 	for (var i = 0, row; row = tab.rows[i]; i++) {
 		for (var j = 0, col; col = row.cells[j]; j++) {
-            console.log("Visit "+ i+" "+j+" "+col.firstChild.src);
+			console.log("Visit "+ i+" "+j+" "+col.firstChild.src);
 			if (col.firstChild.src.indexOf("mario.png")>=0){
 				startX=i;
                 startY=j;   
@@ -47,19 +48,19 @@ async function animation() {
 				endX=i;
 				endY=j;
 			}
-   		}  
+		}  
 	}
 	
 	console.log("START: " + startX+ " " + startY);
     console.log("END: " + endX + " " + endY);
 
     var error=false;
-  
+	
 	for (i=0;i<pathstring.length;i++){
 		var action =  pathstring[i];
 		var nextX = startX;
 		var nextY = startY;
-
+		
 		if (action == 'U'){
 			motionbox.innerHTML="Up";
 			nextX-=1;
@@ -89,7 +90,7 @@ async function animation() {
 			error=true;
 			break;
 		} else{	
-            await sleep(500); // sleep here
+			await sleep(500); // sleep here
             console.log("UPDATE to empty: "+startX+" "+startY);
             setEmptyImage(tab.rows[startX].cells[startY]);
             startX=nextX;
@@ -98,7 +99,7 @@ async function animation() {
             console.log("UPDATE to mario: "+startX+" "+startY);
 		}
 	}
-
+	
 	if (!error && !(startX ==endX && startY ==endY )){
 		console.log("ERROR: last cell is not the destination!");
 		motionbox.innerHTML="Error";
@@ -107,14 +108,12 @@ async function animation() {
 		error=true;
 	}
 	var result = document.getElementById("result");
-
+	
 	if (!error){
 		setMarioImage(tab.rows[startX].cells[startY]);
-		result.innerHTML="SUCCESSFUL!";
-		result.style.color="green";
+		result.innerHTML="<span class='text-success font-weight-bold'>SUCCESSFUL!</span>";
 	}
 	else{
-		result.innerHTML="FAILED!";
-		result.style.color="red";
+		result.innerHTML="<span class='text-danger font-weight-bold'>FAILED!</span>";
 	}
 }

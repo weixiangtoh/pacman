@@ -196,7 +196,7 @@ function find_path($maze, $start, $end){
 
 # Generate and repopulate the height drop-down list
 function generate_height_box(){
-	echo "<select id='heightbox' name='height'>";	
+	echo "<select id='heightbox' name='height' class='form-control'>";	
 	$selected_height = 5;
 	if (isset($_POST["height"])){ 
 		$selected_height = $_POST["height"];
@@ -213,7 +213,7 @@ function generate_height_box(){
 
 # Generate and repopulate the width drop-down list
 function generate_width_box(){
-	echo "<select id='widthbox' name='width'>";
+	echo "<select id='widthbox' name='width' class='form-control'>";
 	$selected_width=5;
 	if (isset($_POST["width"])){ 
 		$selected_width = $_POST["width"];
