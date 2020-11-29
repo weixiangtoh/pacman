@@ -11,6 +11,7 @@
 <html>
 	<head>
 		<title>Pacman Maze</title>
+		<link rel="icon" type="image/png" href="mario.png">
 		<script type="text/javascript" src="animation.js"></script>
 		<!-- bootstrap -->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
